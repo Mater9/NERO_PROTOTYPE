@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Caffè Nero – Logowanie do Wi-Fi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="logo.svg" alt="Green Caffè Nero" class="logo" />
+        <nav>
+          <a href="#">Kawiarnie</a>
+          <a href="#">ZTM</a>
+          <a href="#">Kontakt</a>
+        </nav>
+      </header>
+
+      <main>
+        <h1>WITAMY<br />W GREEN CAFFÈ NERO</h1>
+        <p class="intro">
+          Wszystko zaczęło się od spotkania. <strong>Gerry Ford</strong> – szef
+          Caffè Nero i <strong>Adam Ringer</strong> – szef Green Coffee,
+          spotkali się na początku 2012 roku i postanowili działać razem. Tak
+          powstały miejsca łączące najlepsze cechy obu marek.
+        </p>
+
+        <section class="wifi">
+          <h2>SKORZYSTAJ Z DARMOWEJ SIECI WIFI</h2>
+          <p>
+            Zaloguj się i zaakceptuj regulamin, by uzyskać dostęp do internetu.
+          </p>
+
+          <form id="loginForm">
+            <input type="email" placeholder="Wpisz swój email" required />
+
+            <div class="checkbox">
+              <input type="checkbox" id="terms" required />
+              <label for="terms">
+                Akceptuję
+                <a href="regulamin.pdf" target="_blank"
+                  >regulamin korzystania z sieci Wi-Fi</a
+                >
+              </label>
+            </div>
+
+            <button type="submit">ZALOGUJ</button>
+          </form>
+        </section>
+      </main>
+
+      <footer></footer>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          const checkbox = document.getElementById("terms");
+          if (!checkbox.checked) {
+            e.preventDefault();
+            alert("Musisz zaakceptować regulamin, aby się zalogować.");
+          }
+        });
+    </script>
+  </body>
+</html>
